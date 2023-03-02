@@ -5,6 +5,24 @@
   font-size: 2.25rem;
   line-height: 3.25rem;
   text-align: center;
+  cursor: pointer;
+}
+
+.navHover {
+  background: #ffffff;
+  border-radius: 0.563rem;
+  height: 0.625rem;
+}
+
+.navText + .navHover {
+  visibility: hidden;
+}
+
+.navText:hover + .navHover {
+  visibility: visible;
+  background: #ffffff;
+  border-radius: 0.563rem;
+  height: 0.625rem;
 }
 
 .navActive {

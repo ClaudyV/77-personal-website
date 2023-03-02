@@ -1,5 +1,38 @@
+import { NavbarElement } from "@/shared/interfaces/navbarElements.interface";
 import styles from "@/styles/Navbar.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 const Navbar = () => {
+  const router: any = useRouter();
+  const [hydrated, setHydrated] = useState(false);
+  // Navbar Elements
+  const navElements = [
+    {
+      title: "首頁",
+      path: "/",
+      route: "/",
+    },
+    {
+      title: "關於我",
+      path: "/#about-me",
+      route: "/",
+    },
+    {
+      title: "聯絡我",
+      path: "/#contact-me",
+      route: "/",
+    },
+  ];
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) {
+    // Returns null on first render, so the client and server match
+    return null;
+  }
   return (
     <>
       <div
@@ -8,7 +41,7 @@ const Navbar = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          paddingBottom: '3.875rem'
+          paddingBottom: "3.875rem",
         }}
       >
         <div>
@@ -16,16 +49,23 @@ const Navbar = () => {
         </div>
 
         <div style={{ display: "flex", gap: "8.5rem" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div className={styles.navText}>首頁</div>
-            <div className={styles.navActive}></div>
-          </div>
-          <div className={styles.navText}>
-            <span>關於我</span>
-          </div>
-          <div className={styles.navText}>
-            <span>聯絡我</span>
-          </div>
+          {navElements.map((element: NavbarElement) => (
+            <Link key={element.path} href={element.path}>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div className={styles.navText}>
+                  <span>{element.title}</span>
+                </div>
+                <div
+                  className={
+                    router.asPath === element.path
+                      ? styles.navActive
+                      : styles.navHover
+                  }
+                ></div>
+              </div>
+            </Link>
+          ))}
+
           <div></div>
         </div>
       </div>

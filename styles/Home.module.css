@@ -25,3 +25,7 @@
   font-size: 2rem;
   line-height: 2.875rem;
 }
+
+.homeButton:hover {
+  box-shadow: none !important;
+}
