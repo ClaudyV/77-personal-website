@@ -1,3 +1,36 @@
 .aboutTitle {
-    
+  font-family: "Noto Serif TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.125rem;
+  line-height: 4.5rem;
+  text-align: center;
+  border-bottom: 0.188rem solid #ffffff;
+}
+
+.aboutContent {
+  display: flex;
+  gap: 5.313rem;
+}
+
+.aboutLeft {
+  width: 57%;
+  display: flex;
+  align-items: center;
+}
+
+.aboutRight {
+    position: relative;
+  display: flex;
+  width: 43%;
+}
+
+.aboutLeftText {
+  font-family: "Noto Serif TC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.813rem;
+  display: flex;
+  align-items: center;
 }

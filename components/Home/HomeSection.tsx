@@ -20,8 +20,7 @@ const HomeSection = () => {
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              textAlign: "center",
+              justifyContent: 'center'
             }}
             className={styles.introDesc}
           >

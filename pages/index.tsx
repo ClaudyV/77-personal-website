@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Navbar from "@/components/Navbar/Navbar";
 import HomeSection from "@/components/Home/HomeSection";
+import AboutSection from "@/components/About/AboutSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <main style={{ padding: "0 3.125rem" }}>
         <Navbar />
         <HomeSection />
+        <AboutSection/>
       </main>
     </>
   );
