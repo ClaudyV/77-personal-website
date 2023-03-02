@@ -2,25 +2,37 @@ import { NavbarElement } from "@/shared/interfaces/navbarElements.interface";
 import styles from "@/styles/Navbar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 const Navbar = () => {
-  const router = useRouter();
-  const currentPath = router.asPath;
-
+  const router: any = useRouter();
+  const [hydrated, setHydrated] = useState(false);
   // Navbar Elements
   const navElements = [
     {
       title: "首頁",
-      path: "/#home",
+      path: "/",
+      route: "/",
     },
     {
       title: "關於我",
       path: "/#about-me",
+      route: "/",
     },
     {
       title: "聯絡我",
       path: "/#contact-me",
+      route: "/",
     },
   ];
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) {
+    // Returns null on first render, so the client and server match
+    return null;
+  }
   return (
     <>
       <div
@@ -38,14 +50,14 @@ const Navbar = () => {
 
         <div style={{ display: "flex", gap: "8.5rem" }}>
           {navElements.map((element: NavbarElement) => (
-            <Link href={element.path}>
+            <Link key={element.path} href={element.path}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div className={styles.navText}>
                   <span>{element.title}</span>
                 </div>
                 <div
                   className={
-                    currentPath === element.path
+                    router.asPath === element.path
                       ? styles.navActive
                       : styles.navHover
                   }
