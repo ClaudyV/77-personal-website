@@ -20,7 +20,7 @@
 }
 
 .aboutRight {
-    position: relative;
+  position: relative;
   display: flex;
   width: 43%;
 }
@@ -33,4 +33,45 @@
   line-height: 2.813rem;
   display: flex;
   align-items: center;
+}
+
+.aboutWrapper {
+  padding: 5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutTitle {
+    font-size: 2rem;
+  }
+
+  .aboutWrapper {
+    padding: 2rem 0;
+  }
+
+  .aboutContent {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .aboutRight {
+    width: 60%;
+  }
+
+  .aboutLeftText {
+    font-size: 0.875rem;
+  }
+
+  .aboutLeft {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .aboutRight {
+    width: 100%;
+  }
+
+  .aboutLeftText {
+    font-size: 0.75rem;
+  }
 }
