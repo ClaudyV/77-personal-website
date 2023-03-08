@@ -1,14 +1,9 @@
 import styles from "@/styles/About.module.css";
-import Image from "next/image";
 
 const AboutSection = () => {
   return (
     <>
-      <div
-        style={{
-          padding: "8.5rem 0",
-        }}
-      >
+      <div className={styles.aboutWrapper}>
         <div
           style={{
             display: "flex",

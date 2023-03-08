@@ -30,3 +30,14 @@
   border-radius: 0.563rem;
   height: 0.625rem;
 }
+
+.navbarLinks {
+  display: flex;
+  gap: 8.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navText {
+    font-size: 1.25rem;
+  }
+}

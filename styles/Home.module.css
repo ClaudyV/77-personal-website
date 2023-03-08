@@ -1,3 +1,10 @@
+.homeWrapper {
+  display: flex;
+  gap: 2rem;
+  padding-top: 5rem;
+  justify-content: center;
+}
+
 .introTitle {
   font-family: "Noto Serif TC";
   font-style: normal;
@@ -16,6 +23,7 @@
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .introAction {
@@ -28,4 +36,81 @@
 
 .homeButton:hover {
   box-shadow: none !important;
+}
+
+.homeWrapperLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 50%;
+  justify-content: center;
+}
+
+.homeWrapperRight {
+  width: 50%;
+  position: relative;
+  padding-top: 2rem;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1140px) {
+  .introTitle {
+    font-size: 2.5rem;
+  }
+
+  .introDesc {
+    font-size: 1.2rem;
+  }
+
+  .navMenu {
+    gap: 5rem !important;
+  }
+}
+
+@media screen and (max-width: 958px) {
+  .homeWrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 0;
+  }
+
+  .homeWrapperLeft {
+    width: 100%;
+  }
+
+  .homeWrapperLeft {
+    gap: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 466px) {
+  .homeWrapperRight {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .introTitle {
+    font-size: 1.8rem;
+  }
+
+  .introDesc {
+    font-size: 0.875rem;
+  }
+
+  .homeWrapper {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .introDesc {
+    font-size: 0.75rem !important;
+  }
+
+  .homeWrapperRight {
+    width: 100%;
+  }
 }
